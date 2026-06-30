@@ -1,19 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// export const fetchUsers = createAsyncThunk(
-//     'users/fetchUsers',
-//     async (_, { rejectWithValue }) => {
-//         try {
-//             const response = await axios.get('https://dummyjson.com/recipes');
-//             console.log(response.data.recipes);
-//             return response.data.recipes; // fulfilled
-//         } catch (error) {
-//             return rejectWithValue(error.message); // rejected
-//         }
-//     }
-// );
-
 // thunk for api call
 export const fetchRecipes = createAsyncThunk(
     'recipes/fetchRecipes',
@@ -49,7 +36,7 @@ const recipeSlice = createSlice({
             })
             .addCase(fetchRecipes.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload; // Store error message
+                state.error = action.payload; 
             });
     },
 });
