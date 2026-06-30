@@ -45,7 +45,7 @@ export default function Listing() {
                             <Box className="recipe-footer">
                                 {recipe.servings && (
                                     <Box className="recipe-servings">
-                                        <RestaurantIcon fontSize="small" style={{ color: '#fffdfaff' }} />
+                                        <RestaurantIcon fontSize="small" style={{ color: 'rgb(8, 8, 8)' }} />
                                         <Typography variant="caption" className="recipe-servings-text">
                                             {recipe.servings} servings
                                         </Typography>

@@ -48,9 +48,6 @@
     line-height: 1.4;
     color: #3d2612;
     margin-bottom: 16px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
     overflow: hidden;
     height: 2.8em;
 }
@@ -71,8 +68,8 @@
 
 .recipe-servings-text {
     font-size: 0.75rem;
-    color: #fafaffda;
-    font-weight: 500;
+    color: #000000da;
+    font-weight: 700;
 }
 
 .recipe-calories {
@@ -90,7 +87,7 @@
 }
 
 .loading-text {
-    color: #e65c00;
+    color: #0084ff;
     font-weight: 600;
     font-size: 0.875rem;
 }

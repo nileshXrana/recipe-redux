@@ -8,7 +8,7 @@ export default function Home() {
     <Box sx={{ 
       minHeight: '100vh',
       background: '#b6d3f54a', 
-      py: 6 
+      py: 6
     }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
@@ -17,7 +17,7 @@ export default function Home() {
             component="h1" 
             sx={{ 
               fontWeight: 800,
-              background: ' #3e444bff',
+              background: ' rgb(45, 47, 49)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               mb: 1.5,
