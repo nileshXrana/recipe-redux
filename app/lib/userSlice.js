@@ -2,24 +2,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // thunk
-export const fetchUsers = createAsyncThunk(
-    'users/fetchUsers',
-    async (_, { rejectWithValue }) => {
-        try {
-            const response = await axios.get('https://dummyjson.com/recipes');
-            console.log(response.data.recipes);
-            return response.data.recipes; // fulfilled
-        } catch (error) {
-            return rejectWithValue(error.message); // rejected
-        }
-    }
-);
-
 // export const fetchUsers = createAsyncThunk(
 //     'users/fetchUsers',
 //     async (_, { rejectWithValue }) => {
 //         try {
-//             const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=pasta&apiKey=${process.env.SPOONACULAR_API_KEY}`);
+//             const response = await axios.get('https://dummyjson.com/recipes');
 //             console.log(response.data.recipes);
 //             return response.data.recipes; // fulfilled
 //         } catch (error) {
@@ -27,6 +14,19 @@ export const fetchUsers = createAsyncThunk(
 //         }
 //     }
 // );
+
+export const fetchUsers = createAsyncThunk(
+    'users/fetchUsers',
+    async (_, { rejectWithValue }) => {
+        try {
+            const response = await axios.get(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`);
+            console.log(response.data.recipes);
+            return response.data.recipes; // fulfilled
+        } catch (error) {
+            return rejectWithValue(error.message); // rejected
+        }
+    }
+);
 
 // slice
 const userSlice = createSlice({
@@ -45,7 +45,7 @@ const userSlice = createSlice({
             })
             .addCase(fetchUsers.fulfilled, (state, action) => {
                 state.loading = false;
-                state.data = action.payload; // Store API results
+                state.data = [...state.data, ...action.payload];
             })
             .addCase(fetchUsers.rejected, (state, action) => {
                 state.loading = false;

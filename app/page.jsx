@@ -1,15 +1,34 @@
-"use client"
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 import Listing from './ui/Listing';
 
 export default function Home() {
   return (
-    <Box p={2}>
-      <Typography variant="h4" component="h2">
-        Welcome to the Home Page
-      </Typography>
-      <Listing />
+    <Box sx={{ 
+      minHeight: '100vh',
+      background: '#b6d3f54a', 
+      py: 6 
+    }}>
+      <Container maxWidth="lg">
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography 
+            variant="h3" 
+            component="h1" 
+            sx={{ 
+              fontWeight: 800,
+              background: ' #3e444bff',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              mb: 1.5,
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Fresh Recipes
+          </Typography>
+        </Box>
+        <Listing />
+      </Container>
     </Box>
   );
 }
