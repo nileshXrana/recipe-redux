@@ -21,7 +21,7 @@ export default function Listing() {
         }
     }, [inView, loading, dispatch]);
 
-    const isInitialLoad = loading && recipeList.length === 0;
+    const isInitialLoad = loading && recipeList.length === 0;   
 
     if (isInitialLoad) return <Typography>Loading data...</Typography>;
     if (error && recipeList.length === 0) return <Typography>Error: {error}</Typography>;
