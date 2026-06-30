@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// thunk
 // export const fetchUsers = createAsyncThunk(
 //     'users/fetchUsers',
 //     async (_, { rejectWithValue }) => {
@@ -15,8 +14,9 @@ import axios from 'axios';
 //     }
 // );
 
-export const fetchUsers = createAsyncThunk(
-    'users/fetchUsers',
+// thunk for api call
+export const fetchRecipes = createAsyncThunk(
+    'recipes/fetchRecipes',
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`);
@@ -29,8 +29,8 @@ export const fetchUsers = createAsyncThunk(
 );
 
 // slice
-const userSlice = createSlice({
-    name: 'users',
+const recipeSlice = createSlice({
+    name: 'recipes',
     initialState: {
         data: [],
         loading: false,
@@ -39,19 +39,19 @@ const userSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fetchUsers.pending, (state) => {
+            .addCase(fetchRecipes.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(fetchUsers.fulfilled, (state, action) => {
+            .addCase(fetchRecipes.fulfilled, (state, action) => {
                 state.loading = false;
                 state.data = [...state.data, ...action.payload];
             })
-            .addCase(fetchUsers.rejected, (state, action) => {
+            .addCase(fetchRecipes.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload; // Store error message
             });
     },
 });
 
-export default userSlice.reducer;
+export default recipeSlice.reducer;

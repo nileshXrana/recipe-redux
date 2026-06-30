@@ -3,21 +3,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInView } from 'react-intersection-observer';
-import { fetchUsers } from '../lib/userSlice';
+import {fetchRecipes} from '../lib/userSlice';
 import { Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import './Listing.css';
 
 export default function Listing() {
     const dispatch = useDispatch();
-    const { data: users, loading, error } = useSelector((state) => state.users);
+    const { data: recipes, loading, error } = useSelector((state) => state.recipes);
     const { ref, inView } = useInView({ threshold: 0 });
 
-    const recipeList = users ? Object.values(users) : [];
+    const recipeList = recipes ? Object.values(recipes) : [];
 
     useEffect(() => {
         if (inView && !loading) {
-            dispatch(fetchUsers());
+            dispatch(fetchRecipes());
         }
     }, [inView, loading, dispatch]);
 
