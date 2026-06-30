@@ -23,8 +23,8 @@
 }
 
 .recipe-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(230, 92, 0, 0.12);
+    scale: 1.02;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.171);
 }
 
 .recipe-image {
