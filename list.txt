@@ -1,59 +1,26 @@
-<List>
-                {recipeList.map((recipe) => (
-                    <ListItem key={recipe.id}>
-                        <Card sx={{ maxWidth: 345, borderRadius: 3, boxShadow: 3, overflow: 'hidden' }}>
-            {/* Recipe Image */}
-            {/* <CardMedia
-                component="img"
-                height="194"
-                image={recipe.image}
-                alt={recipe.name}
-            /> */}
-
-            <CardContent>
-                {/* Cuisine and Difficulty Tags */}
-                {/* <Box display="flex" gap={1} mb={1.5}>
-                    <Chip label={recipe.cuisine} size="small" color="primary" variant="outlined" />
-                    <Chip label={recipe.difficulty} size="small" color="secondary" variant="outlined" />
-                </Box> */}
-
-                {/* Title */}
-                <Typography variant="h6" component="h2" noWrap sx={{ fontWeight: 'bold' }}>
-                    {recipe.name}
-                </Typography>
-
-                {/* Rating and Reviews */}
-                {/* <Box display="flex" alignItems="center" gap={0.5} my={1}>
-                    <Rating value={recipe.rating} precision={0.1} readOnly size="small" />
-                    <Typography variant="body2" color="text.secondary">
-                        {recipe.rating} ({recipe.reviewCount} reviews)
-                    </Typography>
-                </Box> */}
-
-                {/* Quick Stats: Prep/Cook Time and Servings */}
-                <Box display="flex" justifyContent="space-between" mt={2} pt={2} sx={{ borderTop: '1px solid #e0e0e0' }}>
-                    {/* <Box display="flex" alignItems="center" gap={0.5}>
-                        <AccessTimeIcon fontSize="small" color="action" />
-                        <Typography variant="caption" color="text.secondary">
-                            {recipe.prepTimeMinutes + recipe.cookTimeMinutes} mins
-                        </Typography>
-                    </Box> */}
-                    <Box display="flex" alignItems="center" gap={0.5}>
-                        <RestaurantIcon fontSize="small" color="action" />
-                        <Typography variant="caption" color="text.secondary">
-                            {recipe.servings} servings
-                        </Typography>
-                    </Box>
-                    <Box display="flex" alignItems="center">
-                        <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 'bold' }}>
-                            {recipe.caloriesPerServing} kcal
-                        </Typography>
-                    </Box>
-                </Box>
-            </CardContent>
-        </Card>
-                    </ListItem>
-                ))}
-            </List>
-
-        
+            "id": 664147,
+            "image": "https://img.spoonacular.com/recipes/664147-556x370.jpg",
+            "imageType": "jpg",
+            "title": "Tuscan White Bean Soup with Olive Oil and Rosemary",
+            "readyInMinutes": 45,
+            "servings": 6,
+            "sourceUrl": "https://www.foodista.com/recipe/HPKTNKY5/tuscan-white-bean-soup-with-olive-oil-and-rosemary",
+            "vegetarian": true,
+            "vegan": true,
+            "glutenFree": true,
+            "dairyFree": true,
+            "veryHealthy": true,
+            "cheap": false,
+            "veryPopular": false,
+            "sustainable": false,
+            "lowFodmap": false,
+            "weightWatcherSmartPoints": 6,
+            "gaps": "no",
+            "preparationMinutes": null,
+            "cookingMinutes": null,
+            "aggregateLikes": 22,
+            "healthScore": 94.0,
+            "creditsText": "foodista.com",
+            "license": null,
+            "sourceName": "foodista.com",
+            "pricePerServing": 49.7

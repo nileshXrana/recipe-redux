@@ -2,8 +2,8 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useInView } from 'react-intersection-observer';
-import {fetchRecipes} from '../lib/userSlice';
+import { useInView } from 'react-intersection-observer'; // infinite scroll
+import { fetchRecipes } from '../lib/userSlice';
 import { Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import './Listing.css';
@@ -59,6 +59,23 @@ export default function Listing() {
                                     </Box>
                                 )}
                             </Box>
+
+                            <Box className="vegitarian-tag" sx={{ marginTop: 1 }} style={{ color: recipe.vegetarian ? 'green' : 'red', borderColor: recipe.vegetarian ? 'green' : 'red' }}>
+                                {recipe.vegetarian ? (
+                                    <Typography variant="caption" sx={{ border: 1, padding: 0.5, }}>
+                                        Vegetarian
+                                    </Typography>
+                                ) : <Typography variant="caption" className="recipe-non-vegetarian" sx={{ border: 1, padding: 0.5 }}>
+                                    Non-Vegetarian
+                                </Typography>}
+                            </Box>
+
+                            <Box className="price-tag" sx={{ marginTop: 1 }}>
+                                <Typography variant="caption" sx={{ border: 1, padding: 0.5 }}>
+                                    Price: ${recipe.pricePerServing}
+                                </Typography>
+                            </Box>
+
                         </CardContent>
                     </Card>
                 ))}
