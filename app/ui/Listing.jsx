@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer'; // infinite scroll
 import { fetchRecipes } from '../lib/userSlice';
 import { Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
+import LoopRoundedIcon from '@mui/icons-material/LoopRounded';
 import './Listing.css';
 
 export default function Listing() {
@@ -23,7 +24,7 @@ export default function Listing() {
 
     const isInitialLoad = loading && recipeList.length === 0;   
 
-    if (isInitialLoad) return <Typography>Loading data...</Typography>;
+    if (isInitialLoad) return <Typography className='loading'><LoopRoundedIcon className='spin'/></Typography>;
     if (error && recipeList.length === 0) return <Typography>Error: {error}</Typography>;
 
     return (
@@ -82,8 +83,8 @@ export default function Listing() {
             </Box>
             <Box ref={ref} className="loading-more">
                 {loading && (
-                    <Typography variant="body2" className="loading-text">
-                        Loading more recipes...
+                    <Typography variant="body2">
+                        <LoopRoundedIcon className='spin'/>
                     </Typography>
                 )}
             </Box>
